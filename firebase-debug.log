@@ -75,3 +75,18 @@ You're about to initialize a Firebase project in this directory:
 [debug] [2022-01-28T15:04:00.075Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
 [debug] [2022-01-28T15:04:00.874Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
 [debug] [2022-01-28T15:04:00.875Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2022-01-28T15:20:57.597Z] >>> [apiv2][query] GET https://api.github.com/repos/LeadsCashbacks/actions/secrets/public-key type=owner
+[debug] [2022-01-28T15:20:58.405Z] <<< [apiv2][status] GET https://api.github.com/repos/LeadsCashbacks/actions/secrets/public-key 404
+[debug] [2022-01-28T15:20:58.406Z] <<< [apiv2][body] GET https://api.github.com/repos/LeadsCashbacks/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2022-01-28T15:21:03.108Z] >>> [apiv2][query] GET https://api.github.com/repos/LeadsCashbacks/actions/secrets/public-key type=owner
+[debug] [2022-01-28T15:21:04.039Z] <<< [apiv2][status] GET https://api.github.com/repos/LeadsCashbacks/actions/secrets/public-key 404
+[debug] [2022-01-28T15:21:04.039Z] <<< [apiv2][body] GET https://api.github.com/repos/LeadsCashbacks/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2022-01-28T15:21:15.598Z] >>> [apiv2][query] GET https://api.github.com/repos/LeadsCashbacks.git/actions/secrets/public-key type=owner
+[debug] [2022-01-28T15:21:16.732Z] <<< [apiv2][status] GET https://api.github.com/repos/LeadsCashbacks.git/actions/secrets/public-key 404
+[debug] [2022-01-28T15:21:16.732Z] <<< [apiv2][body] GET https://api.github.com/repos/LeadsCashbacks.git/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2022-01-28T15:21:22.179Z] Error: kill ENOSYS
+    at process.kill (node:internal/process/per_thread:215:13)
+    at process.listener (C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\signal-exit\index.js:95:15)
+    at process.emit (node:events:390:28)
+[error] 
+[error] Error: An unexpected error has occurred.

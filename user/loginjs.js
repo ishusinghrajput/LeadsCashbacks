@@ -8,19 +8,19 @@ function shownavitems() {
      
 }
 
-function createuser(){
+function loginuser(){
     var email = document.getElementById("email").value;
     var email = document.getElementById("email").value;
-    window.alert(email)
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Signed in 
+      // Signed in
+      window.alert("signed in ")
       var user = userCredential.user;
       // ...
     })
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      // ..
+      window.alert(errorMessage)
     });
 }

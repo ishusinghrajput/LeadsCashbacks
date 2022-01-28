@@ -1,0 +1,223 @@
+body{
+    margin: 0;
+padding: 0;
+font-family: Century Gothic;
+background-size: cover;
+}
+
+.nav{
+    margin: auto;
+    justify-content: right;
+    display: grid;
+}
+
+.bulletlist{
+    margin-right: 20px;
+    padding: 20px;
+    width: 50px;
+    height: 40px;
+}
+
+.navitems{
+    display: grid;
+}
+
+.navhome{
+    border: 3px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 100px;
+    margin-right: 20px;
+    height: fit-content;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.6s ease;
+    margin-bottom: 10px;
+}
+
+
+.navbuynow{
+    border: 3px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 100px;
+    margin-right: 20px;
+    height: fit-content;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.6s ease;
+    margin-bottom: 10px;
+}
+.navbuynow:hover{
+    border: 3px solid black ;
+    background-color: black;
+    color: #fff;
+}
+
+.navclaim{
+    border: 3px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 100px;
+    margin-right: 20px;
+    height: fit-content;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.6s ease;
+    margin-bottom: 10px;
+}
+.navclaim:hover{
+    border: 3px solid black ;
+    background-color: black;
+    color: #fff;
+}
+
+.navlogin{
+    border: 3px solid rgb(11, 111, 224);
+    background-color: rgb(11, 111, 224);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 100px;
+    margin-right: 20px;
+    height: fit-content;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.6s ease;
+}
+.navhome:hover{
+    border: 3px solid black ;
+    background-color: black;
+    color: #fff;
+}
+
+.main{
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.form{
+    background: #fff;
+    padding: 30px;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid gray;
+    border-radius: 10px;
+    box-shadow: 8px 6px 10px gray;
+}
+
+.logintext{
+    color: rgb(11, 111, 224);
+    margin-top: 5px;
+}
+
+.welcometext{
+    color: rgb(52, 52, 53);
+    margin-top: 1px;
+    width: 250px;
+    font-size: 15px;
+}
+
+.email{
+    padding: 8px;
+    border: 2px solid rgb(75, 73, 73);
+    border-radius: 8px;
+    width: 300px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 3px 2px 5px gray;
+}
+
+.password{
+    padding: 8px;
+    border: 2px solid rgb(75, 73, 73);
+    border-radius: 8px;
+    width: 300px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 3px 2px 5px gray;
+}
+
+.forgot{
+    color: rgb(11, 111, 224);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    margin-inline-end: 10px;
+    margin-top: 5px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 8px;
+    transition: 0.6s ease;
+}
+
+.forgot:hover{
+    border: 3px solid rgb(11, 111, 224);
+}
+
+.login{
+    background-color: rgb(11, 111, 224);
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-top: 15px;
+    width: 300px;
+    height: fit-content;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.6s ease;
+}
+
+.dont{
+    color: rgb(11, 111, 224);
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-top: 5px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 8px;
+    transition: 0.6s ease;
+}
+
+.dont:hover{
+    background-color: rgb(11, 111, 224);
+    color: #fff;
+}

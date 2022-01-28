@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Home
+        </title>
+        <meta name="viewport" content="width=device-width , initial-scale = 1.0">
+        <link rel="stylesheet" type="text/css" href="indexstyle.css">
+        <script src="indexjs.js"></script>
+
+    </head>
+    <body>
+        <div class="top" >
+            <div class="nav">
+                <img src="bullet.png" id="bulletlist"  class="bulletlist" onclick="shownavitems()">
+            <div class="navitems" id="navitems" style="display: none;">
+                <a href="index.html" class="navhome">Home</a>
+                <a href="buynow" class="navbuynow">Buy Now</a>
+                <a href="user/signup.html" class="navclaim">Claim Cashback</a>
+                <a href="user/login.html" class="navlogin">Login</a>
+            </div>
+            </div>
+            <h1 class="toptext">Buy LeadsArk from us and get Cashback
+                 upto ₹2000</h1>
+            <a href="buynow" class="buynow">Buy Now</a>
+        </div>
+        <a href="user/signup.html" class="alreadybtn">Already bought? Claim Cashback </a>
+        <div class="howmuch">
+            <ul>
+            <h2 class="howmuchtext">How much cashback will you get :</h2>
+            <h2 class="liteamount">₹500</h2>
+            <h2 class="lite" >On Buying LeadsArk Lite</h2>
+            <h2 class="standardamount">₹1000</h2>
+            <h2 class="standard">On Buying LeadsArk Standard</h2>
+            <h2 class="proamount">₹2000</h2>
+            <h2 class="pro">On Buying LeadsArk Pro</h2></ul>
+        </div>
+        <a href="buynow" class="buynow2">Buy Now</a>
+        <div class="footer" >
+            <h2 class="ifquerytext" >If you have any queries , feel free to talk dirctly to our founder. </h2>
+                <a href="https://wa.me/919102005567" class="whatsapp" >Whatsapp</a>
+            <a href="https://instagram.com/ishuxrajput" class="instagram" >Instagram</a>
+        </div>
+        
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyAmVcedI8Rm6OEs-zVDL34NGdA-AsSg_yE",
+              authDomain: "leadscashbacks.firebaseapp.com",
+              projectId: "leadscashbacks",
+              storageBucket: "leadscashbacks.appspot.com",
+              messagingSenderId: "122044315259",
+              appId: "1:122044315259:web:b140cd3a156ea5782614de",
+              measurementId: "G-8Z17ZG5V4L"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+          </script>
+
+    </body>
+
+</html>

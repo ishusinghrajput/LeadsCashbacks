@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+        <meta name="viewport" content="width=device-width , initial-scale = 1.0">
+        <link rel="stylesheet" type="text/css" href="loginstyle.css">
+        <script src="loginjs.js"></script>
+
+    </head>
+    <body>
+        <div class="nav">
+            <img src="bulletlist.png" id="bulletlist"  class="bulletlist" onclick="shownavitems()">
+        <div class="navitems" id="navitems" style="display: none;">
+            <a href="https://leadscashbacks.ml" class="navhome">Home</a>
+            <a href="buynow" class="navbuynow">Buy Now</a>
+            <a href="signup.html" class="navclaim">Claim Cashback</a>
+            <a href="login.html" class="navlogin">Login</a>
+        </div>
+        </div>
+        <div class="main">
+        <form class="form" id="form">
+            <h1 class="logintext">Login</h1>
+            <h3 class="welcometext">Welcome back,</h3>
+            <input class="email" id="email" type="text" 
+            aria-label="Enter your Email" placeholder="Enter your Email">
+            <input class="password" id="password" type="text" 
+            aria-label="Enter password" placeholder="Enter password">
+            <a href="fogotpwd.html" class="forgot">Forgot password?</a>
+            <button  class="login" onclick="createuser()">LogIn</button>
+            <a href="signup.html" class="dont">Don't have an account? Create One</a>
+        </form>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAmVcedI8Rm6OEs-zVDL34NGdA-AsSg_yE",
+          authDomain: "leadscashbacks.firebaseapp.com",
+          projectId: "leadscashbacks",
+          storageBucket: "leadscashbacks.appspot.com",
+          messagingSenderId: "122044315259",
+          appId: "1:122044315259:web:b140cd3a156ea5782614de",
+          measurementId: "G-8Z17ZG5V4L"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
+    </body>
+
+</html>

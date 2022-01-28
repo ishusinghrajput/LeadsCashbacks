@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sign Up
+        </title>
+        <meta name="viewport" content="width=device-width , initial-scale = 1.0">
+        <link rel="stylesheet" type="text/css" href="signupstyle.css">
+        <script src="signupjs.js"></script>
+
+    </head>
+    <body>
+        <div class="nav">
+            <img src="bulletlist.png" id="bulletlist"  class="bulletlist" onclick="shownavitems()">
+        <div class="navitems" id="navitems" style="display: none;">
+            <a href="https://leadscashbacks.ml" class="navhome">Home</a>
+            <a href="buynow" class="navbuynow">Buy Now</a>
+            <a href="signup.html" class="navclaim">Claim Cashback</a>
+            <a href="login.html" class="navlogin">Login</a>
+        </div>
+        </div>
+        <div class="main">
+        <form class="form" id="form">
+            <h1 class="createtext">Create Account</h1>
+            <h3 class="createtext2">Create Account with the same email you used in LeadsArk to claim your cashback.</h3>
+            <input class="name" id="name" type="text" 
+            aria-label="Enter your name" placeholder="Enter your name">
+            <input class="email" id="email" type="text" 
+            aria-label="Enter your Email" placeholder="Enter your Email">
+            <input class="password" id="password" type="text" 
+            aria-label="Create password" placeholder="Create password">
+            <button  class="create" onclick="createuser()">SignUp</button>
+            <a href="login.html" class="already">Already have an account? Login</a>
+        </form>
+    </div>
+    </body>
+
+</html>

@@ -37,6 +37,8 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
@@ -45,6 +47,7 @@
         const firebaseConfig = {
           apiKey: "AIzaSyAmVcedI8Rm6OEs-zVDL34NGdA-AsSg_yE",
           authDomain: "leadscashbacks.firebaseapp.com",
+          databaseURL: "https://leadscashbacks-default-rtdb.asia-southeast1.firebasedatabase.app",
           projectId: "leadscashbacks",
           storageBucket: "leadscashbacks.appspot.com",
           messagingSenderId: "122044315259",
@@ -55,7 +58,47 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-      </script>
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+        
+
+    </script>
+    
+    <script>
+
+      function shownavitems() {
+         if(document.getElementById("navitems").style.display==="none"){
+         document.getElementById("navitems").style.display = "block"; 
+         }
+         else {
+          document.getElementById("navitems").style.display = "none"; 
+         }
+     
+        }
+
+      function loginuser(){
+        var email = document.getElementById("email").value;
+       var password = document.getElementById("password").value;
+    
+        signInWithEmailAndPassword(auth, email, password)
+       .then((userCredential) => {
+      // Signed in 
+      window.alert("Signed In")
+      const user = userCredential.user;
+      // ...
+      })
+      .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+       window.alert(errorMessage)
+       });
+      }
+
+
+
+
+    </script>
 
     </body>
 

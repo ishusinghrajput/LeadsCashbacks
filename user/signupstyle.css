@@ -118,13 +118,12 @@ background-size: cover;
 
 .form{
     background: #fff;
-    padding: 30px;
+    padding: 20px;
     margin: auto;
     display: grid;
     justify-content: center;
     height: fit-content;
     width: fit-content;
-    border: 2px solid gray;
     border-radius: 10px;
     box-shadow: 8px 6px 10px gray;
 }

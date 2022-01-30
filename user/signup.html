@@ -15,8 +15,8 @@
         <div class="navitems" id="navitems" style="display: none;">
             <a href="https://leadscashbacks.ml" class="navhome">Home</a>
             <a href="buynow" class="navbuynow">Buy Now</a>
-            <a href="signup.html" class="navclaim">Claim Cashback</a>
-            <a href="login.html" class="navlogin">Login</a>
+            <a id="navclaim" class="navclaim">Claim Cashback</a>
+            <a id="navlogin" class="navlogin">Login</a>
         </div>
         </div>
         <div class="main">
@@ -38,7 +38,7 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
-        import { getAuth, onAuthStateChanged , createUserWithEmailAndPassword , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
+        import { getAuth, onAuthStateChanged , signOut , createUserWithEmailAndPassword , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
@@ -64,12 +64,16 @@
      if (user) {
 // User is signed in, see docs for a list of available properties
 // https://firebase.google.com/docs/reference/js/firebase.User
-window.alert("signed")
+
 const uid = user.uid;
+
+document.getElementById("navlogin").innerHTML = "Logout";
+
+
 // ...
 } else {
 // User is signed out
-window.alert("signed out")
+document.getElementById("navlogin").innerHTML = "Login";
 // ...
 }
 });
@@ -84,7 +88,7 @@ window.alert("signed out")
            .then((userCredential) => {
               // Signed in 
               const user = userCredential.user;
-              window.alert("user created")
+              location.href = "profile.html";
               // ...
             })
             .catch((error) => {
@@ -94,6 +98,50 @@ window.alert("signed out")
               // ..
             });
     });
+
+    document.getElementById("navlogin").addEventListener('click' , (e) => {
+        onAuthStateChanged(auth, (user) => {
+         if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    
+    const uid = user.uid;
+    //Sign out
+signOut(auth).then(() => {
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+});
+    // ...
+  } else {
+    // User is signed out
+   
+    location.href = "login.html";
+    // ...
+  }
+        });   
+     });
+
+
+     document.getElementById("navclaim").addEventListener('click' , (e) => {
+        onAuthStateChanged(auth, (user) => {
+         if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    
+    const uid = user.uid;
+    
+    location.href = "profile.html";
+
+    // ...
+  } else {
+    // User is signed out
+   
+    location.href = "signup.html";
+    // ...
+  }
+        });   
+     });
 
     </script>
 

@@ -24,7 +24,7 @@
                  upto ₹2000</h1>
             <a href="buynow" class="buynow">Buy Now</a>
         </div>
-        <a id="alreadybtn" class="alreadybtn">Already bought? Claim Cashback </a>
+        <a href="user/signup.html" class="alreadybtn">Already bought? Claim Cashback </a>
         <div class="howmuch">
             <ul>
             <h2 class="howmuchtext">How much cashback will you get :</h2>
@@ -72,12 +72,13 @@
          if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
-
+    window.alert("signed")
     document.getElementById("navlogin").innerHTML = "Logout";
     const uid = user.uid;
     // ...
   } else {
     // User is signed out
+    window.alert("signed out")
     document.getElementById("navlogin").innerHTML = "Login";
     // ...
   }
@@ -127,34 +128,7 @@ signOut(auth).then(() => {
         });   
      });
 
-
-     document.getElementById("alreadybtn").addEventListener('click' , (e) => {
-        onAuthStateChanged(auth, (user) => {
-         if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    
-    const uid = user.uid;
-    
-    location.href = "user/profile.html";
-
-    // ...
-  } else {
-    // User is signed out
-   
-    location.href = "user/signup.html";
-    // ...
-  }
-        });   
-     });
-
-
-
         </script>
-
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"
-  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 
     </body>
 

@@ -78,8 +78,9 @@ background-size: cover;
 }
 
 .navclaim{
-    border: 3px solid black;
-    color: black;
+    border: 3px solid rgb(11, 111, 224);
+    background-color: rgb(11, 111, 224);
+    color: #fff;
     text-decoration: none;
     padding: 10px;
     text-align: center;
@@ -94,16 +95,15 @@ background-size: cover;
     transition: 0.6s ease;
     margin-bottom: 10px;
 }
-.navclaim:hover{
+.navhome:hover{
     border: 3px solid black ;
     background-color: black;
     color: #fff;
 }
 
 .navlogin{
-    border: 3px solid rgb(11, 111, 224);
-    background-color: rgb(11, 111, 224);
-    color: #fff;
+    border: 3px solid black;
+    color: black;
     text-decoration: none;
     padding: 10px;
     text-align: center;
@@ -117,43 +117,85 @@ background-size: cover;
     font-weight: bold;
     transition: 0.6s ease;
 }
-.navhome:hover{
+.navlogin:hover{
     border: 3px solid black ;
     background-color: black;
     color: #fff;
 }
 
-.main{
-    justify-content: center;
-    margin: auto;
-    margin-top: 30px;
+
+.details{
+    margin-top: 50px;
+    margin-left: 70px;
 }
 
-.form{
-    background: #fff;
-    padding: 20px;
+.heytext{
+    font-size: 22px;
+    color: rgb(44, 43, 43);
+}
+
+.email{
+    font-size: 25px;
+    color: rgb(11, 111, 224);
+}
+
+.balancediv{
+    margin-top: 50px;
+    margin-left: 70px;
+    width: fit-content;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(11, 111, 224);
+    border-radius: 8px;
+}
+
+.availabletext{
+    font-size: 20px;
+    color: #fff;
+}
+
+.balancetext{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.withdrawldiv{
     margin: auto;
+    margin-top: 10px;
     display: grid;
     justify-content: center;
     height: fit-content;
     width: fit-content;
     border-radius: 10px;
     box-shadow: 8px 6px 10px gray;
+    padding: 20px;
 }
 
-.logintext{
-    color: rgb(11, 111, 224);
-    margin-top: 5px;
+
+.bankradio{
+    margin-left: 20px;
 }
 
-.welcometext{
-    color: rgb(52, 52, 53);
-    margin-top: 1px;
-    width: 250px;
-    font-size: 15px;
+.upi{
+    padding: 8px;
+    border: 2px solid rgb(75, 73, 73);
+    border-radius: 8px;
+    width: 300px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 3px 2px 5px gray;
 }
 
-.email{
+.bankdetails{
+    margin-top: 20px;
+    display: grid;
+    display: none;
+}
+
+.name{
     padding: 8px;
     border: 2px solid rgb(75, 73, 73);
     border-radius: 8px;
@@ -164,7 +206,7 @@ background-size: cover;
     box-shadow: 3px 2px 5px gray;
 }
 
-.password{
+.ifsc{
     padding: 8px;
     border: 2px solid rgb(75, 73, 73);
     border-radius: 8px;
@@ -175,35 +217,38 @@ background-size: cover;
     box-shadow: 3px 2px 5px gray;
 }
 
-.forgot{
-    color: rgb(11, 111, 224);
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px;
-    text-decoration: none;
-    text-align: center;
-    margin: auto;
-    margin-inline-end: 10px;
-    margin-top: 5px;
-    width: fit-content;
-    height: fit-content;
+.accountno{
+    padding: 8px;
+    border: 2px solid rgb(75, 73, 73);
     border-radius: 8px;
-    transition: 0.6s ease;
+    width: 300px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 3px 2px 5px gray;
 }
 
-.forgot:hover{
-    border: 3px solid rgb(11, 111, 224);
+.amount{
+    padding: 8px;
+    border: 2px solid rgb(75, 73, 73);
+    border-radius: 8px;
+    width: 300px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 3px 2px 5px gray;
 }
 
-.login{
+.amountlabel{
+    margin-top: 15px;
+}
+
+.withdrawbtn{
     background-color: rgb(11, 111, 224);
     color: #fff;
     padding: 10px;
     text-decoration: none;
     text-align: center;
-    justify-content: center;
-    display: flex;
-    margin: auto;
     margin-top: 15px;
     width: 300px;
     height: fit-content;
@@ -213,112 +258,130 @@ background-size: cover;
     transition: 0.6s ease;
 }
 
-.dont{
-    color: rgb(11, 111, 224);
+
+.verifydiv{
+    margin: auto;
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 8px 6px 10px gray;
+    padding: 20px;
+}
+
+.verifybtns{
+    margin-top: 35px;
+    display: grid;
+}
+
+.refreshbtn{
+    background-color: rgb(11, 111, 224);
+    color: #fff;
     padding: 10px;
-    font-weight: bold;
     text-decoration: none;
     text-align: center;
-    justify-content: center;
-    display: flex;
+    width: 300px;
+    height: fit-content;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.6s ease;
     margin: auto;
-    margin-top: 5px;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.resend{
+    color: rgb(11, 111, 224);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: none;
+    margin: auto;
+    margin-top: 15px;
     width: fit-content;
     height: fit-content;
     border-radius: 8px;
     transition: 0.6s ease;
 }
 
-.dont:hover{
+.resend:hover{
+    border: 3px solid rgb(11, 111, 224);
+}
+
+.senttext{
+    font-size: 20px;
+}
+
+.verifyemail{
+    font-size: 21px;
+    color: rgb(11, 111, 224);
+}
+
+.pleasetext{
+    font-size: 16px;
+    width: 350px;
+    color: rgb(48, 46, 46);
+}
+
+.successdiv{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    margin: auto;
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 8px 6px 10px gray;
+    padding: 20px;
+    background: #fff;
+}
+
+.successtext{
+    font-size: 21px;
+    color: rgb(11, 111, 224);
+}
+
+.reflecttext{
+    font-size: 16px;
+    width: 350px;
+    color: rgb(48, 46, 46);
+}
+
+.gotitbtn{
     background-color: rgb(11, 111, 224);
     color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    width: 300px;
+    height: fit-content;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.6s ease;
+    margin: auto;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .loading{
     position: fixed;
     left: 50%;
     top: 50%;
-    display: none;
     transform: translate(-50% , -50%);
     width: 100%;
     height: 100%;
     z-index: 9999;
     background: transparent;
     background-blend-mode: darken;
-    
-}
-
-.forgotdiv{
-    margin: auto;
-    margin-top: 20px;
-    justify-content: center;
-    height: fit-content;
-    width: fit-content;
-    border-radius: 10px;
-    box-shadow: 8px 6px 10px gray;
-    padding: 20px;
-    display: grid;
-}
-
-.forgotemail{
-    padding: 8px;
-    border: 2px solid rgb(75, 73, 73);
-    border-radius: 8px;
-    width: 300px;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 16px;
-    box-shadow: 3px 2px 5px gray;
-}
-
-.resetbtn{
-    background-color: rgb(11, 111, 224);
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    text-align: center;
-    width: 300px;
-    height: fit-content;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.6s ease;
-    margin: auto;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.forgotdiv2{
-    margin: auto;
-    margin-top: 20px;
-    justify-content: center;
-    height: fit-content;
-    width: fit-content;
-    border-radius: 10px;
-    box-shadow: 8px 6px 10px gray;
-    padding: 20px;
-    display: grid;
-}
-
-.senttext{
-    font-size: 16px;
-    width: 350px;
-    color: rgb(48, 46, 46);
-}
-
-.gotologinbtn{
-    background-color: rgb(11, 111, 224);
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    text-align: center;
-    width: 300px;
-    height: fit-content;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.6s ease;
-    margin: auto;
-    justify-content: center;
-    margin-top: 15px;
 }

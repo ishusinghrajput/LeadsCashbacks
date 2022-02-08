@@ -11,15 +11,18 @@
     </head>
     <body>
         <div class="top" >
+        <div class="toplogo" >
+          <img src="logowhite.png" class="logo" onclick="gotohome()" />
             <div class="nav">
                 <img src="bullet.png" id="bulletlist"  class="bulletlist" onclick="shownavitems()">
-            <div class="navitems" id="navitems" style="display: none;">
+             <div class="navitems" id="navitems" style="display: none;">
                 <a href="index.html" class="navhome">Home</a>
                 <a href="buynow" class="navbuynow">Buy Now</a>
                 <a id="navclaim" class="navclaim">Claim Cashback</a>
                 <a id="navlogin" class="navlogin">Login</a>
+             </div>
             </div>
-            </div>
+          </div>
             <h1 class="toptext">Buy LeadsArk from us and get Cashback
                  upto ₹2000</h1>
             <a href="buynow" class="buynow">Buy Now</a>
@@ -152,9 +155,6 @@ signOut(auth).then(() => {
 
         </script>
 
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"
-  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 
     </body>
 

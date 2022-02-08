@@ -6,10 +6,12 @@
         </title>
         <meta name="viewport" content="width=device-width , initial-scale = 1.0">
         <link rel="stylesheet" type="text/css" href="loginstyle.css">
-        <script src="loginjs.js"></script>
+        
 
     </head>
     <body>
+      <div class="toplogo" >
+        <img src="logoblack.png" class="logo" onclick="gotohome()" />
         <div class="nav">
             <img src="bulletlist.png" id="bulletlist"  class="bulletlist" onclick="shownavitems()">
         <div class="navitems" id="navitems" style="display: none;">
@@ -19,6 +21,7 @@
             <a id="navlogin" class="navlogin">Login</a>
         </div>
         </div>
+      </div>
         <div class="main">
         <div class="form" id="form">
             <h1 class="logintext">Login</h1>
@@ -27,17 +30,30 @@
             aria-label="Enter your Email" placeholder="Enter your Email">
             <input class="password" id="password" type="text" 
             aria-label="Enter password" placeholder="Enter password">
-            <a href="fogotpwd.html" class="forgot">Forgot password?</a>
-            <a  class="login" id="login" >LogIn</a>
+            <a id="forgot" class="forgot" onclick="showforgot()">Forgot password?</a>
+            <a  class="login" id="login" >Login</a>
             <a href="signup.html" class="dont">Don't have an account? Create One</a>
         </div>
+    </div>
+
+    <div class="forgotdiv" id="forgotdiv">
+      <h1 class="resettext">Reset Password</h1>
+      <input class="forgotemail" id="forgotemail" type="text" 
+      aria-label="Enter your Email" placeholder="Enter your Email">
+      <a  class="resetbtn" id="resetbtn">Reset Password</a>
+    </div> 
+
+    <div class="forgotdiv2" id="forgotdiv2">
+      <h1 class="resettext2">Reset Password</h1>
+      <h3 class="senttext">We have sent you an email to change your password, Check your inbox.</h3>
+      <a  class="gotologinbtn" id="gotologinbtn" onclick="reloadpage()">Go To Login</a>
     </div>
 
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
-        import { getAuth, onAuthStateChanged , signOut , signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
+        import { getAuth, onAuthStateChanged , signOut , signInWithEmailAndPassword , sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
@@ -78,12 +94,17 @@ document.getElementById("navlogin").innerHTML = "Login";
 
 
     document.getElementById("login").addEventListener('click' , (e) => {
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("login").innerHTML = "Signing In...";
+        
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
     
         signInWithEmailAndPassword(auth, email, password)
        .then((userCredential) => {
       // Signed in 
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("login").innerHTML = "Login";
       location.href = "profile.html";
       const user = userCredential.user;
       // ...
@@ -91,6 +112,8 @@ document.getElementById("navlogin").innerHTML = "Login";
       .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("login").innerHTML = "Login";
        window.alert(errorMessage)
        });
     });
@@ -141,9 +164,34 @@ signOut(auth).then(() => {
      });
 
 
+     document.getElementById("resetbtn").addEventListener('click' , (e) => {
+      document.getElementById("loading").style.display = "block";
+      var email = document.getElementById("forgotemail").value;
+      sendPasswordResetEmail(auth, email)
+  .then(() => {
+    // Password reset email sent!
+    document.getElementById("form").style.display = "none";
+          document.getElementById("forgotdiv").style.display = "none";
+          document.getElementById("forgotdiv2").style.display = "block";
+          document.getElementById("loading").style.display = "none";
+    // ..
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    document.getElementById("loading").style.display = "none";
+    window.alert(errorMessage);
+    // ..
+  });
+     });
+
+
     </script>
     
     <script>
+
+      document.getElementById("forgotdiv").style.display = "none";
+      document.getElementById("forgotdiv2").style.display = "none";
 
       function shownavitems() {
          if(document.getElementById("navitems").style.display==="none"){
@@ -155,10 +203,30 @@ signOut(auth).then(() => {
      
         }
 
+        function gotohome() {
+         location.href = "https://leadscashbacks.ml"
+     
+        }
 
+        function showforgot() {
+          document.getElementById("form").style.display = "none";
+          document.getElementById("forgotdiv2").style.display = "none";
+          document.getElementById("forgotdiv").style.display = "block";
+     
+        }
+
+        function reloadpage() {
+         location.reload();
+     
+        }
 
 
     </script>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player class="loading" id="loading" src="https://assets9.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"
+  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+x
 
     </body>
 

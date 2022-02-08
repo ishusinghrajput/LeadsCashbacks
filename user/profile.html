@@ -2,89 +2,191 @@
 <html>
     <head>
         <title>
-            Home
+            Profile
         </title>
         <meta name="viewport" content="width=device-width , initial-scale = 1.0">
-        <link rel="stylesheet" type="text/css" href="indexstyle.css">
-        <script src="indexjs.js"></script>
+        <link rel="stylesheet" type="text/css" href="profilestyle.css">
+      
 
     </head>
     <body>
-        <div class="top" >
-            <div class="nav">
-                <img src="bullet.png" id="bulletlist"  class="bulletlist" onclick="shownavitems()">
-            <div class="navitems" id="navitems" style="display: none;">
-                <a href="index.html" class="navhome">Home</a>
-                <a href="buynow" class="navbuynow">Buy Now</a>
-                <a id="navclaim" class="navclaim">Claim Cashback</a>
-                <a id="navlogin" class="navlogin">Login</a>
-            </div>
-            </div>
-            <h1 class="toptext">Buy LeadsArk from us and get Cashback
-                 upto ₹2000</h1>
-            <a href="buynow" class="buynow">Buy Now</a>
+      <div class="toplogo" >
+        <img src="logoblack.png" class="logo" onclick="gotohome()" />
+        <div class="nav">
+            <img src="bulletlist.png" id="bulletlist"  class="bulletlist" onclick="shownavitems()">
+        <div class="navitems" id="navitems" style="display: none;">
+            <a href="https://leadscashbacks.ml" class="navhome">Home</a>
+            <a href="buynow" class="navbuynow">Buy Now</a>
+            <a id="navclaim" class="navclaim">Claim Cashback</a>
+            <a id="navlogin" class="navlogin">Login</a>
         </div>
-        <a href="user/signup.html" class="alreadybtn">Already bought? Claim Cashback </a>
-        <div class="howmuch">
-            <ul>
-            <h2 class="howmuchtext">How much cashback will you get :</h2>
-            <h2 class="liteamount">₹500</h2>
-            <h2 class="lite" >On Buying LeadsArk Lite</h2>
-            <h2 class="standardamount">₹1000</h2>
-            <h2 class="standard">On Buying LeadsArk Standard</h2>
-            <h2 class="proamount">₹2000</h2>
-            <h2 class="pro">On Buying LeadsArk Pro</h2></ul>
         </div>
-        <a href="buynow" class="buynow2">Buy Now</a>
-        <div class="footer" >
-            <h2 class="ifquerytext" >If you have any queries , feel free to talk dirctly to our founder. </h2>
-                <a href="https://wa.me/919102005567" class="whatsapp" >Whatsapp</a>
-            <a href="https://instagram.com/ishuxrajput" class="instagram" >Instagram</a>
+      </div>
+      <div class="profiledetails" id="profiledetails" >
+      <div class="details" >
+        <h2 class="heytext" >Hey, there</h2>
+        <h2 class="email" id="email" >example@gmail.com</h2>
+      </div>
+      <div class="balancediv" >
+        <h2 class="availabletext" >Available Balance :</h2>
+        <h2 class="balancetext" id="balancetext" >₹0</h2>
+      </div>
+      <div class="withdrawldiv" id="withdrawldiv" >
+        <h2 class="choosetext" >Choose a withdrawl method :</h2>
+        <div class="radiodiv">
+          <input type="radio" class="upiradio" id="upiradio" name="upi" title="UPI" value="upi" checked onclick="showupi()">
+             <label for="upiradio">UPI</label>
+          <input type="radio" class="bankradio" id="bankradio" name="bank" title="Bank Account" value="bank" onclick="showbank()">
+             <label for="bankradio">Bank Account</label>
         </div>
-        
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
-            import { getAuth, onAuthStateChanged , signOut } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyAmVcedI8Rm6OEs-zVDL34NGdA-AsSg_yE",
-              authDomain: "leadscashbacks.firebaseapp.com",
-              databaseURL: "https://leadscashbacks-default-rtdb.asia-southeast1.firebasedatabase.app",
-              projectId: "leadscashbacks",
-              storageBucket: "leadscashbacks.appspot.com",
-              messagingSenderId: "122044315259",
-              appId: "1:122044315259:web:b140cd3a156ea5782614de",
-              measurementId: "G-8Z17ZG5V4L"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
+        <input type="text" class="upi" id="upi" placeholder="example@bankname" aria-label="example@bankname" />
+        <div class="bankdetails" id="bankdetails">
+          <input type="text" class="name" id="name" placeholder="NAME OF ACCOUNT HOLDER" aria-label="NAME OF ACCOUNT HOLDER" />
+          <input type="text" class="ifsc" id="ifsc" placeholder="IFSC Code" aria-label="IFSC CODE" />
+          <input type="number" class="accountno" id="accountno" placeholder="ACCOUNT NO." aria-label="ACCOUNT NO." />
+        </div>
+        <label for="amount" class="amountlabel">Amount cannot be changed</label>
+        <h3 class="amount" id="amount">₹0</h3>
+        <a class="withdrawbtn" id="withdrawbtn"> WITHDRAW </a>
+      </div>
+    </div>
 
-            const auth = getAuth();
-            onAuthStateChanged(auth, (user) => {
-         if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    window.alert("signed")
-    document.getElementById("navlogin").innerHTML = "Logout";
-    const uid = user.uid;
-    // ...
-  } else {
-    // User is signed out
-    window.alert("signed out")
-    document.getElementById("navlogin").innerHTML = "Login";
-    // ...
+
+    <div class="verifydiv" id="verifydiv" >
+      <h2 class="senttext" >We have sent you a verification email on your registered email </h2>
+      <h2 class="verifyemail" id="verifyemail">example@gmail.com</h2>
+      <h2 class="pleasetext">Please verify to withdraw your cashback, Verification is necessary to save our users from fraud.</h2>
+      <div class="verifybtns"></div>
+      <a class="resend" id="resendbtn">Resend Verification Email</a>
+      <a class="refreshbtn" id="refreshbtn"> Verified? Refresh </a></div>
+    </div>
+
+    <div class="successdiv" id="successdiv">
+      <h2 class="successtext" >Withdrawl Successful</h2>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ya4ycrti.json"  background="transparent"
+        speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+      <h2 class="reflecttext">It will reflect in your account within 24 hours.</h2>
+      <a class="gotitbtn" id="gotitbtn"> Got It </a>
+    </div>
+
+    <div class="successdiv" id="faildiv">
+      <h2 class="successtext" >Withdrawl Failed</h2>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_mlsj6yqm.json"  background="transparent"
+      speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+      <a class="gotitbtn" id="gotitbtn"> Go to Profile </a>
+    </div>
+
+
+      <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
+        import { getAuth, onAuthStateChanged , signOut  , sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
+        import { getDatabase , ref , set , update , push , onValue , orderByKey, orderByChild, query , get , child} from "https://www.gstatic.com/firebasejs/9.6.5/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAmVcedI8Rm6OEs-zVDL34NGdA-AsSg_yE",
+          authDomain: "leadscashbacks.firebaseapp.com",
+          databaseURL: "https://leadscashbacks-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "leadscashbacks",
+          storageBucket: "leadscashbacks.appspot.com",
+          messagingSenderId: "122044315259",
+          appId: "1:122044315259:web:b140cd3a156ea5782614de",
+          measurementId: "G-8Z17ZG5V4L"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth();
+        const db = getDatabase();
+
+        onAuthStateChanged(auth, (user) => {
+     if (user) {
+// User is signed in, see docs for a list of available properties
+// https://firebase.google.com/docs/reference/js/firebase.User
+
+const uid = user.uid;
+
+document.getElementById("navlogin").innerHTML = "Logout";
+
+if (user.emailVerified) {
+  document.getElementById("verifydiv").style.display = "none";
+  document.getElementById("profiledetails").style.display = "block";
+  if (user !== null) {
+             user.providerData.forEach((profile) => {
+               
+              document.getElementById("email").innerHTML = profile.email;
+
+              onValue(ref(db, 'subscribedusers/') , (snapshot) => {
+              snapshot.forEach((childSnapshot) => {
+               const childkey = childSnapshot.key;
+               const dbemail = childSnapshot.val().email;
+
+               if(dbemail === profile.email){
+
+                const dbbalance = childSnapshot.val().balance;
+                document.getElementById('balancetext').innerHTML = "₹" + dbbalance;
+                document.getElementById('amount').innerHTML = "₹" + dbbalance;
+                document.getElementById('loading').style.display = "none";
+                //window.alert(dbbalance);
+              
+               }
+               else{
+                document.getElementById('loading').style.display = "none";
+               }
+
+               })
+    
+              })
+
+              })
+              
   }
+
+  
+
+}
+else {
+  var currentuser = auth.currentUser;
+  if (user !== null) {
+             user.providerData.forEach((profile) => {
+               
+              document.getElementById("verifyemail").innerHTML = profile.email;
+              })
+              
+  }
+  
+  document.getElementById("profiledetails").style.display = "none";
+  document.getElementById("verifydiv").style.display = "block";
+  sendEmailVerification(auth.currentUser)
+               .then(() => {
+               // Email verification sent!
+               // ...
+             });
+
+             document.getElementById('loading').style.display = "none";
+}
+
+
+// ...
+} else {
+// User is signed out
+document.getElementById('loading').style.display = "none";
+location.href = "login.html";
+// ...
+}
 });
 
-     document.getElementById("navlogin").addEventListener('click' , (e) => {
+
+
+    document.getElementById("navlogin").addEventListener('click' , (e) => {
         onAuthStateChanged(auth, (user) => {
          if (user) {
     // User is signed in, see docs for a list of available properties
@@ -101,7 +203,7 @@ signOut(auth).then(() => {
   } else {
     // User is signed out
    
-    location.href = "user/login.html";
+    location.href = "login.html";
     // ...
   }
         });   
@@ -116,19 +218,249 @@ signOut(auth).then(() => {
     
     const uid = user.uid;
     
-    location.href = "user/profile.html";
+    location.href = "profile.html";
 
     // ...
   } else {
     // User is signed out
    
-    location.href = "user/signup.html";
+    location.href = "signup.html";
     // ...
   }
         });   
      });
 
-        </script>
+     document.getElementById("refreshbtn").addEventListener('click' , (e) => {
+        location.reload();
+     });
+
+     document.getElementById("resendbtn").addEventListener('click' , (e) => {
+      sendEmailVerification(auth.currentUser)
+               .then(() => {
+               // Email verification sent!
+               document.getElementById("resendbtn").innerHTML = "Sent";
+               // ...
+              });
+     });
+
+     document.getElementById("gotitbtn").addEventListener('click' , (e) => {
+        location.reload();
+     });
+
+     document.getElementById("withdrawbtn").addEventListener('click' , (e) => {
+      onAuthStateChanged(auth, (user) => {
+        document.getElementById("withdrawbtn").innerHTML = 'Withdraw in process...';
+        document.getElementById('loading').style.display = "block";
+     if (user) {
+// User is signed in, see docs for a list of available properties
+// https://firebase.google.com/docs/reference/js/firebase.User
+
+const uid = user.uid;
+
+
+if (user.emailVerified) {
+  document.getElementById("verifydiv").style.display = "none";
+  document.getElementById("profiledetails").style.display = "block";
+  if (user !== null) {
+             user.providerData.forEach((profile) => {
+               
+
+              onValue(ref(db, 'subscribedusers/') , (snapshot) => {
+              snapshot.forEach((childSnapshot) => {
+               const childkey = childSnapshot.key;
+               const dbemail = childSnapshot.val().email;
+
+               if(dbemail === profile.email){
+
+                const dbbalance = childSnapshot.val().balance;
+               if(dbbalance >= 100){
+
+                  if(document.getElementById("upiradio").checked === true  && document.getElementById("upi").value != ""){
+                  var upiid = document.getElementById("upi").value;
+
+                  const db = getDatabase();
+                  push(ref(db, 'withdraws' ) ,  {
+                    upi:upiid,
+                    amount:dbbalance
+                
+                  }).then(() => {
+                    set(ref(db, 'subscribedusers/' + childkey ) ,  {
+                      email:null,
+                      balance:null
+                    
+                    }).then(() => {
+                      document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+                      document.getElementById("successdiv").style.display = "block";
+                      document.getElementById('loading').style.display = "none";
+                    }).catch((error) => {
+                      push(ref(db, 'partialfailedwithdraws' ) ,  {
+                    upi:upiid,
+                    amount:dbbalance,
+                    email:profile.email,
+                    childkey:childkey
+                    });
+                    document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+                    document.getElementById("faildiv").style.display = "block";
+                    document.getElementById('loading').style.display = "none";
+                    
+                  });
+                  }).catch((error) => {
+                    document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+                    document.getElementById("faildiv").style.display = "block";
+                    document.getElementById('loading').style.display = "none";
+                  });
+                }
+                else if(document.getElementById("bankradio").checked === true
+                && document.getElementById("name").value != "" && document.getElementById("ifsc").value != ""
+                && document.getElementById("accountno").value != ""){
+                  var name = document.getElementById("name").value;
+                  var ifsc = document.getElementById("ifsc").value;
+                  var accountno = document.getElementById("accountno").value;
+
+                  const db = getDatabase();
+                  push(ref(db, 'withdraws' ) ,  {
+                    name:name,
+                    ifsc:ifsc,
+                    accountno:accountno
+                
+                  }).then(() => {
+                    set(ref(db, 'subscribedusers/' + childkey ) ,  {
+                      email:null,
+                      balance:null
+                
+                    }).then(() => {
+                      document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+                      document.getElementById("successdiv").style.display = "block";
+                      document.getElementById('loading').style.display = "none";
+                    }).catch((error) => {
+                      push(ref(db, 'partialfailedwithdraws' ) ,  {
+                    upi:upiid,
+                    amount:dbbalance,
+                    email:profile.email,
+                    childkey:childkey
+                    });
+                    document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+                    document.getElementById("faildiv").style.display = "block";
+                    document.getElementById('loading').style.display = "none";
+                    
+                  });
+                  }).catch((error) => {
+                    document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+                    document.getElementById("faildiv").style.display = "block";
+                    document.getElementById('loading').style.display = "none";
+                  });
+                }
+                else{
+                  window.alert("Please fill the form!");
+                  document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+                  document.getElementById('loading').style.display = "none";
+                }
+              
+                }
+               else{
+                  window.alert("You don't have enough balance!");
+                  document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+                  document.getElementById('loading').style.display = "none";
+                }
+                
+              
+              
+               }
+
+
+               
+
+               })
+    
+              })
+
+              })
+              
+  }
+
+  
+
+}
+else {
+  var currentuser = auth.currentUser;
+  if (user !== null) {
+             user.providerData.forEach((profile) => {
+               
+              document.getElementById("verifyemail").innerHTML = profile.email;
+              })
+              
+  }
+  
+  document.getElementById("profiledetails").style.display = "none";
+  document.getElementById("verifydiv").style.display = "block";
+  sendEmailVerification(auth.currentUser)
+               .then(() => {
+               // Email verification sent!
+               // ...
+             });
+             document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+             document.getElementById('loading').style.display = "none";
+}
+
+
+// ...
+} else {
+// User is signed out
+document.getElementById("withdrawbtn").innerHTML = 'Withdraw';
+document.getElementById('loading').style.display = "none";
+location.href = "login.html";
+// ...
+}
+});
+
+
+     });
+
+    </script>
+
+      <script>
+
+        document.getElementById("verifydiv").style.display = "none";
+        document.getElementById("successdiv").style.display = "none";
+        document.getElementById("profiledetails").style.display = "none";
+        document.getElementById("faildiv").style.display = "none";
+
+
+        function shownavitems() {
+         if(document.getElementById("navitems").style.display==="none"){
+         document.getElementById("navitems").style.display = "block"; 
+         }
+         else {
+          document.getElementById("navitems").style.display = "none"; 
+         }
+     
+        }
+
+        function showupi() {
+          document.getElementById("bankradio").checked = false;
+          document.getElementById("bankdetails").style.display="none";
+          document.getElementById("upiradio").checked = true;
+          document.getElementById("upi").style.display="block";
+        }
+
+        function showbank() {
+          document.getElementById("upiradio").checked = false;
+          document.getElementById("upi").style.display="none";
+          document.getElementById("bankradio").checked = true;
+          document.getElementById("bankdetails").style.display="block"
+          document.getElementById("bankdetails").style.display="grid";
+        }
+
+        function gotohome() {
+         location.href = "https://leadscashbacks.ml"
+     
+        }
+      </script>
+
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player id="loading" class="loading" src="https://assets9.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"
+  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 
     </body>
 

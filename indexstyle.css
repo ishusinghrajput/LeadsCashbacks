@@ -5,7 +5,20 @@ font-family: Century Gothic;
 background-size: cover;
 }
 
+.toplogo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 90px;
+    width: auto;
+    padding: 10px;
+}
+
 .nav{
+    position: absolute;
+    right: 20px;
     margin: auto;
     justify-content: right;
     display: grid;
@@ -160,7 +173,7 @@ background-size: cover;
 
 .howmuch{
     margin: auto;
-    display: flex;
+    display: grid;
     justify-content: center;
 }
 

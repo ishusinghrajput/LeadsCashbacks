@@ -7,3 +7,8 @@ function shownavitems() {
     }
      
 }
+
+function gotohome() {
+    location.href = "https://leadscashbacks.ml"
+
+   }

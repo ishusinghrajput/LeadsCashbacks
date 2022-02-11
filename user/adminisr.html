@@ -73,7 +73,7 @@
 
 const uid = user.uid;
 const currentuser = auth.currentuser;
-
+document.getElementById("form").style.visibility = "block";
 document.getElementById("navlogin").innerHTML = "Logout";
 if (user !== null) {
   user.providerData.forEach((profile) => {
@@ -189,6 +189,7 @@ signOut(auth).then(() => {
     </script>
 
     <script>
+      document.getElementById("form").style.visibility = "none";
     function shownavitems() {
        if(document.getElementById("navitems").style.display==="none"){
          document.getElementById("navitems").style.display = "block"; 

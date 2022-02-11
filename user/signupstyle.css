@@ -141,6 +141,7 @@ background-size: cover;
     height: fit-content;
     width: fit-content;
     border-radius: 10px;
+    box-shadow: 8px 6px 10px gray;
 }
 
 .createtext{

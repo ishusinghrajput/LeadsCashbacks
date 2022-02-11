@@ -73,13 +73,13 @@
 
 const uid = user.uid;
 const currentuser = auth.currentuser;
-document.getElementById("form").style.visibility = "block";
+
 document.getElementById("navlogin").innerHTML = "Logout";
 if (user !== null) {
   user.providerData.forEach((profile) => {
      
       if (profile.email === "ishusinghh.135@gmail.com") {
-          
+        document.getElementById("form").style.visibility = "block";
       }
       else{
           location.href = "profile.html";

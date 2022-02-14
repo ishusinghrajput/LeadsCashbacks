@@ -24,7 +24,7 @@
             </div>
           </div>
             <h1 class="toptext">Buy LeadsArk from us and get Cashback
-                 upto ₹2000</h1>
+                 upto ₹1000</h1>
             <a href="http://leadsark.com/JoinNow.aspx?e=&id=98532&pid=0" class="buynow">Buy Now</a>
         </div>
         <a id="alreadybtn" class="alreadybtn">Already bought? Claim Cashback </a>
@@ -33,9 +33,9 @@
             <h2 class="howmuchtext">How much cashback will you get :</h2>
             <h2 class="liteamount">₹500</h2>
             <h2 class="lite" >On Buying LeadsArk Lite</h2>
-            <h2 class="standardamount">₹1000</h2>
+            <h2 class="standardamount">₹700</h2>
             <h2 class="standard">On Buying LeadsArk Standard</h2>
-            <h2 class="proamount">₹2000</h2>
+            <h2 class="proamount">₹1000</h2>
             <h2 class="pro">On Buying LeadsArk Pro</h2>
         </div>
         <a href="http://leadsark.com/JoinNow.aspx?e=&id=98532&pid=0" class="buynow2">Buy Now</a>
@@ -47,110 +47,7 @@
         
         <script type="module">
             // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
-            import { getAuth, onAuthStateChanged , signOut } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-          
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyAmVcedI8Rm6OEs-zVDL34NGdA-AsSg_yE",
-              authDomain: "leadscashbacks.firebaseapp.com",
-              databaseURL: "https://leadscashbacks-default-rtdb.asia-southeast1.firebasedatabase.app",
-              projectId: "leadscashbacks",
-              storageBucket: "leadscashbacks.appspot.com",
-              messagingSenderId: "122044315259",
-              appId: "1:122044315259:web:b140cd3a156ea5782614de",
-              measurementId: "G-8Z17ZG5V4L"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
-
-            const auth = getAuth();
-            onAuthStateChanged(auth, (user) => {
-         if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-
-    document.getElementById("navlogin").innerHTML = "Logout";
-    const uid = user.uid;
-    // ...
-  } else {
-    // User is signed out
-    document.getElementById("navlogin").innerHTML = "Login";
-    // ...
-  }
-});
-
-     document.getElementById("navlogin").addEventListener('click' , (e) => {
-        onAuthStateChanged(auth, (user) => {
-         if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    
-    const uid = user.uid;
-    //Sign out
-signOut(auth).then(() => {
-  // Sign-out successful.
-}).catch((error) => {
-  // An error happened.
-});
-    // ...
-  } else {
-    // User is signed out
-   
-    location.href = "user/login.html";
-    // ...
-  }
-        });   
-     });
-
-
-     document.getElementById("navclaim").addEventListener('click' , (e) => {
-        onAuthStateChanged(auth, (user) => {
-         if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    
-    const uid = user.uid;
-    
-    location.href = "user/profile.html";
-
-    // ...
-  } else {
-    // User is signed out
-   
-    location.href = "user/signup.html";
-    // ...
-  }
-        });   
-     });
-
-
-     document.getElementById("alreadybtn").addEventListener('click' , (e) => {
-        onAuthStateChanged(auth, (user) => {
-         if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    
-    const uid = user.uid;
-    
-    location.href = "user/profile.html";
-
-    // ...
-  } else {
-    // User is signed out
-   
-    location.href = "user/signup.html";
-    // ...
-  }
-        });   
-     });
-
+            const _0x2ae231=_0x2de0;function _0x5cf5(){const e=["134GfzOys","Logout","getElementById","user/profile.html","addEventListener","1345038fPbrYi","882976ZnFRmf","9KPfHaO","1:122044315259:web:b140cd3a156ea5782614de","122044315259","uid","110509sNjstn","user/signup.html","href","leadscashbacks.firebaseapp.com","then","198aaGwKk","innerHTML","181350WkjaPH","AIzaSyAmVcedI8Rm6OEs-zVDL34NGdA-AsSg_yE","https://leadscashbacks-default-rtdb.asia-southeast1.firebasedatabase.app","click","922VeJULB","10684YHtqqV","4079000MrQgLN","G-8Z17ZG5V4L","user/login.html","leadscashbacks.appspot.com","navlogin"];return(_0x5cf5=function(){return e})()}!function(e,t){const a=_0x2de0,s=_0x5cf5();for(;;)try{if(269438===parseInt(a(477))/1*(-parseInt(a(484))/2)+-parseInt(a(489))/3+-parseInt(a(478))/4+-parseInt(a(473))/5+-parseInt(a(471))/6*(-parseInt(a(495))/7)+-parseInt(a(490))/8+-parseInt(a(491))/9*(-parseInt(a(479))/10))break;s.push(s.shift())}catch(e){s.push(s.shift())}}();import{initializeApp}from"https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";function _0x2de0(e,t){const a=_0x5cf5();return(_0x2de0=function(e,t){return a[e-=467]})(e,t)}import{getAnalytics}from"https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";import{getAuth,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";const firebaseConfig={apiKey:_0x2ae231(474),authDomain:_0x2ae231(469),databaseURL:_0x2ae231(475),projectId:"leadscashbacks",storageBucket:_0x2ae231(482),messagingSenderId:_0x2ae231(493),appId:_0x2ae231(492),measurementId:_0x2ae231(480)},app=initializeApp(firebaseConfig),analytics=getAnalytics(app),auth=getAuth();onAuthStateChanged(auth,e=>{const t=_0x2ae231;if(e){document.getElementById(t(483))[t(472)]=t(485);e[t(494)]}else document[t(486)]("navlogin")[t(472)]="Login"}),document[_0x2ae231(486)](_0x2ae231(483))[_0x2ae231(488)](_0x2ae231(476),e=>{onAuthStateChanged(auth,e=>{const t=_0x2de0;if(e){e[t(494)];signOut(auth)[t(470)](()=>{}).catch(e=>{})}else location[t(468)]=t(481)})}),document.getElementById("navclaim")[_0x2ae231(488)](_0x2ae231(476),e=>{onAuthStateChanged(auth,e=>{const t=_0x2de0;if(e){e[t(494)];location.href=t(487)}else location.href=t(467)})}),document[_0x2ae231(486)]("alreadybtn")[_0x2ae231(488)](_0x2ae231(476),e=>{onAuthStateChanged(auth,e=>{const t=_0x2de0;if(e){e.uid;location.href=t(487)}else location.href="user/signup.html"})});
 
 
         </script>

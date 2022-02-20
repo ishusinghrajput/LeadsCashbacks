@@ -177,6 +177,8 @@ background-size: cover;
 }
 
 .ytvideo{
+    width: 360px;
+    height: 200px;
     margin: auto;
     display: flex;
     justify-content: center;
